@@ -1,0 +1,2 @@
+- [] `.cart-btn-wrapper { display: none; }`
+- this class to be in components/Navbar, because navbar control the `@mediaQuery`
