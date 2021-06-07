@@ -13,6 +13,7 @@ import {
 } from "../components";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import products_reducer from "../reducers/products_reducer";
 
 const SingleProductPage = () => {
   const { id } = useParams();
@@ -53,6 +54,7 @@ const SingleProductPage = () => {
     company,
     images,
   } = product;
+
   return (
     <Wrapper>
       <PageHero title={name} product />
@@ -61,10 +63,10 @@ const SingleProductPage = () => {
           back to products
         </Link>
         <div className="product-center">
-          <ProductImages />
+          <ProductImages images={images} />
           <section className="content">
             <h2>{name}</h2>
-            <Stars />
+            <Stars stars={stars} reviews={reviews} />
             <h5 className="price">{formatPrice(price)}</h5>
             <p className="desc">{description}</p>
             <p className="info">
@@ -80,7 +82,7 @@ const SingleProductPage = () => {
               {company}
             </p>
             <hr />
-            {stock > 0 && <AddToCart />}
+            {stock > 0 && <AddToCart product={product} />}
           </section>
         </div>
       </div>
