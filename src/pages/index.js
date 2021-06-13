@@ -6,11 +6,11 @@ import Cart from "./CartPage";
 import Error from "./ErrorPage";
 import Checkout from "./CheckoutPage";
 import PrivateRoute from "./PrivateRoute";
-import Auth from "./AuthWrapper";
+import AuthWrapper from "./AuthWrapper";
 
 export {
   About,
-  Auth,
+  AuthWrapper,
   Cart,
   Checkout,
   Error,

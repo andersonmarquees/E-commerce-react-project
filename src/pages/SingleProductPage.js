@@ -13,7 +13,6 @@ import {
 } from "../components";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import products_reducer from "../reducers/products_reducer";
 
 const SingleProductPage = () => {
   const { id } = useParams();
@@ -31,10 +30,12 @@ const SingleProductPage = () => {
         history.push("/");
       }, 3000);
     }
+    // eslint-disable-next-line
   }, [error]);
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`);
+    // eslint-disable-next-line
   }, [id]);
 
   if (loading) {
